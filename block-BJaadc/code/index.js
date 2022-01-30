@@ -26,29 +26,46 @@ console.log(message.includes("answer"));
 console.log(message.includes("they"));
 
 // Log true or false based on whether the word "is" exist in message or not
-
+console.log(message.includes("is"));
 // Log true or false based on whether the word "Is" exist in message or not
+console.log(message.includes("is"));
 
 // Check and log whether the word from index 3 to 6 is "you" or not (use slice)
-
+if (message.slice(3, 6) === "you") {
+  console.log(true);
+} else {
+  console.log(false);
+}
 // Check and log whether the word from index 7 to 8 is "a" or not
+if (message.slice(7, 8) === "a") {
+  console.log(true);
+} else {
+  console.log(false);
+}
 
 // Check and log whether the last 3 character in message is "no!" or not (you can use -3 in slice)
-
-// Check and log whether the last 5 character in message is "no!" or not
-
+console.log(message.endsWith("no!"));
+// Check and log whether the last 5 character in message "is no!" or not
+console.log(message.endsWith("is no!"));
 // Log the message variable, all in lowecase
-
+console.log(message.toLowerCase());
 // Log the message variable, all in uppercase
-
+console.log(message.toUpperCase());
 // Replace the word "are" to "can't", store it in a new variable named `newMessage` and log it.
-
+let newMessage = message.replace("are", "can't");
+console.log(newMessage);
 // Replace the word "still" to "" (empty) using newMessage variable, and re-assign the output to the variable `newMessage` and log it.
-
+let newMessage = message.replace("still", "");
+console.log(newMessage);
 // Replace the word "thinking" to "decide" using newMessage variable, and re-assign the output to the variable `newMessage` and log it.
-
+let newMessage = message.replace("thinking", "deciding");
+console.log(newMessage);
 // Log all the characters from the message variable (you can user for..of loop on string)
-
+for (let mess of message) {
+  console.log(mess);
+}
 // Split all the words in message (split by " " space) and store it in a variable messageArray
+let messageArray = message.split(" ");
 
 // Log all the words of messageArray
+console.log(messageArray);
