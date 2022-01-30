@@ -213,6 +213,7 @@ console.log(name.repeat(5));
 <!-- the replace method returns a new string with value replaced -->
 
 <!-- replace  method change the original string -->
+
 <!-- is is check from stating .it is found that string .it is changes only one string if we found same string it is not change that string  -->
 
 let name = "umakant rajpoot kumar";
@@ -227,7 +228,55 @@ console.log(userName.replace("campus","school"));
 16. `slice`
 
 <!-- slice method extract a parts of a string  -->
-<!--  -->
+
+<!-- the slice methods returns the extract part in a new string   -->
+
+<!-- slice method does not change original string  -->
+
+<!-- slice method gives start index and last index value   is is take starting  index -->
+
+<!-- if we provide one value it is copy all part it is leave only that part that is match number og index -->
+
+let userName = "Alt campus is best campus for codding course ";
+console.log(userName.slice(3,10));
+
+let name = "umakant raj "
+console.log(name.slice(3));
+
+let name = "umakant raj "
+console.log(name.slice(3,20));
 
 17. `split`
+<!-- split methods splits a string into an array of substring  -->
+
+<!-- the split method returns the new array  -->
+
+<!-- the split method does not change original value  -->
+
+<!-- if we give empty string without space then he give one by one latters in array . if we give empty string with space then it is give one by one words in arrey-->
+
+let name = "umakant raj "
+console.log(name.split(""));
+
+let name = "umakant raj "
+console.log(name.split(" "));
+
+let sentence = "he is good boy but his behavior in not good"
+console.log(sentence.split(" "));
+
 18. `substring`
+
+<!-- the substring method extract characters between two index (position) from a string and return the substrings -->
+
+<!-- the substring method extracts characters from start to end -->
+
+<!-- the substring method does not change the original string -->
+
+let name = "umakant raj "
+console.log(name.substring(2,5));
+
+let name = "umakant raj "
+console.log(name.substring(2));
+
+let sentence = "he is good boy but his behavior in not good"
+console.log(sentence.substring(10,20));
