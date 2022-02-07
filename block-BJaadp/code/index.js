@@ -54,7 +54,13 @@ let femaleGrade = persons
   .sort((a, b) => a - b)
   .pop();
 // Find the highest grade for people whose name starts with 'J' or 'P'
-
+let a = persons
+  .filter(p => p.name.startsWith("J") || p.name.startsWith("p"))
+  .reduce((acc, cv) => {
+    return acc.concat(cv.grade);
+  }, [])
+  .sort((a, b) => a - b)
+  .pop();
 const fruitBasket = [
   "banana",
   "cherry",
@@ -68,7 +74,7 @@ const fruitBasket = [
   "orange",
   "fig",
 ];
-fruitBasket.reduce((allname, fruitName) => {
+let fruitsObj = fruitBasket.reduce((allname, fruitName) => {
   if (fruitName in allname) {
     allname[fruitName]++;
   } else {
@@ -94,6 +100,12 @@ Output:
 
 [['banana', 2], ['cherry', 3], ['orange', 3], ['apple', 2], ['fig', 1]]
 */
+1;
+let array = object.keys(fruitsObj).reduce((acc, cv) => {
+  acc = acc.concat([cv, fruitsObj[cv]]);
+  return acc;
+}, []);
+
 fruitBasket.reduce((allname, fruitName) => {
   if (fruitName in allname) {
     [allname[fruitName]++];
@@ -120,13 +132,14 @@ const dataTwo = [
   [7, 8, 9],
   [[10, 11], 12],
 ];
-dataTwo
-  .join(" ")
-  .split("  ")
-  .reduce((acc, cv) => {
-    return acc.concat(cv);
-  }, []);
-
+dataTwo.reduce((acc, cv) => {
+  return acc.concat(cv.flat(Infinity));
+}, []);
+2;
+dataTwo.reduce((acc, cv) => {
+  acc = acc.concat(cv.flat(Infinity));
+  return acc;
+}, []);
 // Using reduce flat dataTwo array
 
 /*
