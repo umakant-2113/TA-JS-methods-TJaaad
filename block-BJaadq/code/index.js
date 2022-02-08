@@ -1,36 +1,94 @@
 // NOTE: You can not use reduce methods to solve this exercise
 
-function countAllPeople() {
-  // your code goes here
+function countAllPeople(array) {
+   return got.houses.map(a=>a.people.length).reduce((acc,cv)=>{
+    return acc+=cv;
+},0);
 }
 
 function peopleByHouses() {
-  // your code goes here
+  let output  = {};
+   got.houses.map(item=>{
+   return output[item.name] = item.people.length;
+  });
+  return output;
 }
 
+
 function everyone() {
-  // your code goes here
+  let finalArr = [];
+  got.houses.filter(item=>{
+    item.people.map(eachName=>{
+      finalArr.push(eachName.name);
+    })
+  })
+  return finalArr;
 }
 
 function nameWithS() {
-  // your code goes here
+  let finalArr = [];
+  got.houses.map(item=>{
+    item.people.filter(eachName=>{
+      if(eachName.name.toLowerCase().includes('s')){
+        finalArr.push(eachName.name);
+      }
+    })
+  })
+  return finalArr;
 }
 
 function nameWithA() {
-  // your code goes here
+  let finalArr =[];
+ got.houses.map(item=>{
+   item.people.filter(eachName=>{
+     if(eachName.name.toLocaleLowerCase().includes("a")){
+       finalArr.push(eachName.name);
+     }
+   })
+ }) 
+ return finalArr;
 }
+nameWithA();
 
 function surnameWithS() {
-  // your code goes here
+  let finalArr= [];
+  got.houses.map(item=>{
+    item.people.filter(eachName=>{
+      if(eachName.name.split(' ')[1].includes('S')){
+        finalArr.push(eachName.name);
+      }
+    })
+  })
+  return  finalArr;
 }
+
 
 function surnameWithA() {
-  // your code goes here
+  let finalArr =[];
+  got.houses.map(item=>{
+    item.people.filter(eachName=>{
+      if(eachName.name.split(" ")[1].includes("A")){
+        finalArr.push(eachName.name);
+      }
+    })
+  })
+  return finalArr;
 }
+surnameWithA();
 
 function peopleNameOfAllHouses() {
-  // your code goes here
+  let output = {};
+  let finalArr = [];
+  got.houses.filter(item=>{
+   let peoplesName = item.people.reduce((acc,cv)=>{
+      acc.push(cv.name);
+      return acc;
+    },[])
+    return output[item.name] = peoplesName;
+});
+return output;
 }
+peopleNameOfAllHouses();
 
 // Testing your result after writing your function
 console.log(countAllPeople());
